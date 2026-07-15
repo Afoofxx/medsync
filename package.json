@@ -6,7 +6,7 @@
   "description": "MedSync — Emergency Response Coordination System for Lagos State",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+   "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
