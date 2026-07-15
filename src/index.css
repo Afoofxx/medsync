@@ -11,15 +11,30 @@ body { font-feature-settings: 'cv02','cv03','cv04','cv11'; }
 ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #334155; }
 
-/* Keep Leaflet map below modals */
-/* Keep Leaflet map below modals */
-.leaflet-container,
-.leaflet-pane,
-.leaflet-control { z-index: 1 !important; }
-
-/* Leaflet dark tweaks */
-.leaflet-container { background: #050a14 !important; font-family: inherit; }
+/* Leaflet base styling */
+.leaflet-container {
+  z-index: 0 !important;
+  background: #050a14 !important;
+  font-family: inherit;
+  position: relative !important;
+}
 .leaflet-tile-pane { filter: brightness(0.9); }
+
+/* Force ALL Leaflet layers below overlays.
+   Leaflet's defaults reach 400-700; we clamp them to 0. */
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-tile-pane,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-tooltip-pane,
+.leaflet-popup-pane {
+  z-index: 0 !important;
+}
+
 .leaflet-control-attribution {
   background: rgba(10, 15, 26, 0.85) !important;
   color: #64748b !important;
@@ -36,7 +51,7 @@ body { font-feature-settings: 'cv02','cv03','cv04','cv11'; }
 
 .text-glow-red { text-shadow: 0 0 12px rgba(239, 68, 68, 0.6); }
 
-/* Range input */
+/* Range input styling */
 input[type='range'] {
   -webkit-appearance: none;
   background: transparent;
