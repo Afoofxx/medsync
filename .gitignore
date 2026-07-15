@@ -10,3 +10,5 @@ dist-ssr
 .netlify
 supabase/.branches
 supabase/.temp
+Untitled-*.txt
+*.local.txt
